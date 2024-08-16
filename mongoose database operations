@@ -1,0 +1,22 @@
+const zod=require('zod');
+const express=require('express');
+const mongoose=require('mongoose');
+const jwt=require('jsonwebtoken');
+
+const app=express();
+app.use(express.json());
+
+mongoose.connect
+("mongodb+srv://arthteerth93:WaveCreativeEcho@cluster0.i22535d.mongodb.net")
+
+const allusers=mongoose.model('user',{username:String , password:String});
+
+const arth=new allusers({
+    username:"arthteerth",
+    password:"arthteerth"
+})
+arth.save()
+
+
+//always first check if there is user with same name then proceed 
+//to check the existing user , findOne(name) is the function builtin
